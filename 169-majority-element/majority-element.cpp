@@ -1,5 +1,24 @@
 class Solution {
-	public: int majorityElement(vector < int > & nums) {
+public:
+    int majorityElement(vector<int>& nums) {
+       	////APPROACH 2: Optimal | Moore's Voting Algorithm //modify 3rd time
+		int n = nums.size();
+		int count = 0;
+		int majority = 0;
+
+		for(int i = 0; i < n; i++) {
+			if(nums[i] == majority) {
+				count++;
+			} else if(count == 0) {
+				majority = nums[i];
+				count = 1; //extra
+			} else {
+				count--;;
+			}
+		}
+		return majority;
+	}
+};
 		/*
 		  //APPROACH 1 : USING SORTING
 		  sort(nums.begin(),nums.end());
@@ -7,20 +26,6 @@ class Solution {
 		  return nums[n/2];
 		}
     */
-		//APPROACH 2: Optimal | Moore's Voting Algorithm
-		int n = nums.size();
-        int count = 0;
-		int majority = 0;
-		for(int i = 0; i < n; i++) {    	//        for(int num: nums)
-			if(count == 0) {
-				majority = nums[i];
-			}
-			if(nums[i] == majority) {
-				count ++;
-			} else {
-				count --;           // 18-22 line in 1 line ->  //count+=(nums[i]==candidate)?1:-1;
-			}
-		}
-		return majority;
-	}
-};
+		
+		 
+  
