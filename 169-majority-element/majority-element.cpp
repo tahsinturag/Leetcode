@@ -8,19 +8,19 @@ class Solution {
 		}
     */
 		//APPROACH 2: Optimal | Moore's Voting Algorithm
-		int count = 0;
-		int candidate = 0;
-		//        for(int num: nums)
-		for(int i = 0; i < nums.size(); i++) {
+		int n = nums.size();
+        int count = 0;
+		int majority = 0;
+		for(int i = 0; i < n; i++) {    	//        for(int num: nums)
 			if(count == 0) {
-				candidate = nums[i];
+				majority = nums[i];
 			}
-			if(nums[i] == candidate) {
-				count += 1;
+			if(nums[i] == majority) {
+				count ++;
 			} else {
-				count -= 1; // 12,13 line in 1 line //count+=(nums[i]==candidate)?1:-1;
+				count --;           // 18-22 line in 1 line ->  //count+=(nums[i]==candidate)?1:-1;
 			}
 		}
-		return candidate;
+		return majority;
 	}
 };
