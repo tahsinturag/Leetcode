@@ -28,7 +28,8 @@ public: ////APPROACH : Optimal | Moore's Voting Algorithm
         vector<int> result;
         count1 = 0;
         count2 = 0;
-        /*for(int num:nums) {
+        /*this part for avoiding bracket
+            for(int num:nums) {
             if(num == majority1)
                 count1++;
             else if(num == majority2)
