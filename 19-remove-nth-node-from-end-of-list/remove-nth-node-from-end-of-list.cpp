@@ -21,7 +21,7 @@ class Solution {
       fast = fast -> next;
       slow = slow -> next;
     }
-    slow -> next = slow -> next -> next;
+    slow -> next = slow -> next -> next; //move 2 times
     return start -> next;
   }
 };
